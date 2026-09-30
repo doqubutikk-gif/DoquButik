@@ -1,56 +1,36 @@
 <!DOCTYPE html>
 <html lang="tr" class="scroll-smooth">
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BUTİK DOQU | Haute Couture Zarafet</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
     <style>
-     body {
-    /* --- ARKA PLAN FOTOĞRAFI VE TÜL (OVERLAY) --- */
-    /* background-image içine kendi fotoğrafının yolunu yazmalısın */
-    background-image:  url('kapak444.png');
-    background-size: cover;          /* Fotoğrafı ekrana tam oturtur */
-    background-position: center;     /* Ortalar */
-    background-repeat: no-repeat;    /* Tekrarlanmasını önler */
-    background-attachment: fixed;    /* Sayfa kaydırıldığında sabit kalır */
+        body {
+            background-image: url('kapak444.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            overflow-x: hidden; /* Mobilde yatay taşmaları kesin olarak engeller */
+        }
 
-   /* Varsayılan stil (Genellikle mobil öncelikli veya genel tasarım) */
-.container {
-    width: 100%;
-    padding: 10px;
-}
+        .font-cinzel {
+            font-family: 'Cinzel', serif;
+        }
 
-/* Ekran genişliği 768 pikselden büyükse (Tablet ve Bilgisayarlar için) */
-@media screen and (min-width: 768px) {
-    .container {
-        width: 800px;
-        margin: 0 auto; /* Ortala */
-    }
-}   
-img {
-    max-width: 100%;
-    height: auto;
-}
-.font-cinzel {
-    font-family: 'Cinzel', serif;
-}
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 10px 30px rgba(184, 149, 110, 0.08);
+        }
 
-.glass-panel {
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    box-shadow: 0 10px 30px rgba(184, 149, 110, 0.08);
-}
-
-.hero-glow {
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(247, 244, 240, 0) 70%);
-}
-
-        
+        .hero-glow {
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(247, 244, 240, 0) 70%);
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col selection:bg-[#d4af37] selection:text-white">
@@ -63,38 +43,38 @@ img {
         <div class="absolute inset-0 hero-glow z-0 pointer-events-none"></div>
 
         <!-- Üst Header -->
-        <header class="w-full max-w-7xl mx-auto px-6 sm:px-12 py-8 flex justify-between items-center relative z-10">
-            <div class="flex items-center space-x-4">
+        <header class="w-full max-w-7xl mx-auto px-4 sm:px-12 py-6 flex flex-col sm:flex-row justify-between items-center gap-4 relative z-10">
+            <div class="flex items-center space-x-3">
                 <div class="w-10 h-10 rounded-full overflow-hidden border border-[#b8956e]/40 bg-white/80 flex items-center justify-center shadow-md">
                     <img src="kapak.png" alt="Logo" class="w-full h-full object-contain" onerror="this.src='https://via.placeholder.com/40?text=D'">
                 </div>
-                <span class="font-cinzel text-lg tracking-[0.3em] font-semibold text-[#3d322c]">BUTİK DOQU</span>
+                <span class="font-cinzel text-sm sm:text-lg tracking-[0.2em] sm:tracking-[0.3em] font-semibold text-[#3d322c]">BUTİK DOQU</span>
             </div>
             
-            <div class="flex items-center space-x-6">
-                <div class="hidden sm:flex items-center space-x-3 text-xs tracking-widest text-[#8c6d4f] uppercase font-medium">
+            <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-4">
+                <div class="hidden md:flex items-center space-x-3 text-xs tracking-widest text-[#8c6d4f] uppercase font-medium">
                     <span class="w-1.5 h-1.5 rounded-full bg-[#d4af37] animate-ping"></span>
                     <span>Sezon Koleksiyonu Yayında</span>
                 </div>
-                <button onclick="openStore()" class="group relative px-8 py-3.5 overflow-hidden rounded-full bg-[#2c2522] text-[#f7f4f0] font-cinzel text-xs tracking-[0.2em] font-bold uppercase transition-all duration-500 hover:bg-[#d4af37] hover:shadow-[0_0_30px_rgba(212,175,55,0.3)]">
+                <button onclick="openStore()" class="group relative px-5 sm:px-8 py-3 overflow-hidden rounded-full bg-[#2c2522] text-[#f7f4f0] font-cinzel text-[11px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] font-bold uppercase transition-all duration-500 hover:bg-[#d4af37] hover:shadow-[0_0_30px_rgba(212,175,55,0.3)]">
                     <span class="relative z-10">Ürünlerimiz!</span>
                 </button>
-                <!-- Uyarı çıkmasını sağlayan örnek buton -->
-<button onclick="alert('Tel:021233322211 E-posta:eposta ')" class="group relative px-8 py-3.5 overflow-hidden rounded-full bg-[#2c2522] text-[#f7f4f0] font-cinzel text-xs tracking-[0.2em] font-bold uppercase transition-all duration-500 hover:bg-[#d4af37] hover:shadow-[0_0_30px_rgba(212,175,55,0.3)]">
-    iletişim
-</button>
+                <!-- İstediğin Uyarı Butonu (İletişim) -->
+                <button onclick="alert('www.butikdoqu.com size şu mesajı iletiyor:\n\nTel: 0212 699 67 05\nE-posta: destek@butikdoqu.com')" class="group relative px-5 sm:px-8 py-3 overflow-hidden rounded-full bg-[#2c2522] text-[#f7f4f0] font-cinzel text-[11px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] font-bold uppercase transition-all duration-500 hover:bg-[#d4af37] hover:shadow-[0_0_30px_rgba(212,175,55,0.3)]">
+                    İletişim
+                </button>
             </div>
         </header>
 
         <!-- Orta Alan / Manifesto -->
         <main class="max-w-5xl mx-auto px-6 text-center relative z-10 my-auto">
-            <span class="inline-block text-[10px] uppercase tracking-[0.5em] text-[#8c6d4f] font-semibold mb-6 px-4 py-1.5 rounded-full border border-[#d4af37]/30 bg-white/60 backdrop-blur-md shadow-sm">
+            <span class="inline-block text-[10px] uppercase tracking-[0.3em] sm:tracking-[0.5em] text-[#8c6d4f] font-semibold mb-4 sm:mb-6 px-4 py-1.5 rounded-full border border-[#d4af37]/30 bg-white/60 backdrop-blur-md shadow-sm">
                 Haute Couture & Minimalizm
             </span>
-            <h1 class="font-cinzel text-4xl sm:text-7xl font-light text-[#2c2522] tracking-[0.15em] mb-6 leading-tight">
+            <h1 class="font-cinzel text-3xl sm:text-7xl font-light text-[#2c2522] tracking-[0.15em] mb-4 sm:mb-6 leading-tight">
                 ButikDoqu <br><span class="font-semibold italic text-[#8c6d4f]"></span>
             </h1>
-            <p class="text-[#5c4d45] text-xs sm:text-sm max-w-lg mx-auto font-light tracking-wide leading-relaxed mb-10">
+            <p class="text-[#5c4d45] text-xs sm:text-sm max-w-lg mx-auto font-light tracking-wide leading-relaxed mb-8 sm:mb-10">
                 Sıradanlıktan uzak, inci düğmeli özel trikolar ve benzersiz kesimlerle stilinizi zamansız bir sanat eserine dönüştürün. ButikDoqu
             </p>
             <button onclick="openStore()" class="inline-flex items-center space-x-4 text-xs font-cinzel uppercase tracking-[0.3em] text-[#2c2522] border-b border-[#b8956e] pb-2 hover:text-[#8c6d4f] hover:border-[#8c6d4f] transition-all duration-300 font-semibold">
@@ -104,20 +84,20 @@ img {
         </main>
 
         <!-- Alt Bilgi Bantları -->
-        <footer class="w-full max-w-7xl mx-auto px-6 sm:px-12 py-8 relative z-10 grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-[#b8956e]/20 text-[11px] uppercase tracking-widest text-[#6c5a50] font-medium">
-            <div class="flex items-center space-x-3">
+        <footer class="w-full max-w-7xl mx-auto px-4 sm:px-12 py-6 relative z-10 grid grid-cols-2 md:grid-cols-4 gap-4 border-t border-[#b8956e]/20 text-[10px] sm:text-[11px] uppercase tracking-widest text-[#6c5a50] font-medium text-center sm:text-left">
+            <div class="flex items-center justify-center sm:justify-start space-x-2">
                 <span class="text-[#b8956e]">✦</span>
                 <span>Özel Tasarım Parçalar</span>
             </div>
-            <div class="flex items-center space-x-3">
+            <div class="flex items-center justify-center sm:justify-start space-x-2">
                 <span class="text-[#b8956e]">✦</span>
                 <span>Hızlı Kargo</span>
             </div>
-            <div class="flex items-center space-x-3">
+            <div class="flex items-center justify-center sm:justify-start space-x-2">
                 <span class="text-[#b8956e]">✦</span>  
                 <span>Butik Paketleme Deneyimi</span>
             </div>
-            <div class="flex items-center space-x-3">
+            <div class="flex items-center justify-center sm:justify-start space-x-2">
                 <span class="text-[#b8956e]">✦</span>
                 <span>Sınırlı Üretim Koleksiyon</span>
             </div>
@@ -126,23 +106,23 @@ img {
 
 
     <!-- 2. ANA MAĞAZA / LÜKS VİTRİN -->
-    <div id="storePage" class="hidden flex-col min-h-screen bg-[]">
-        <style>background-color: blueviolet;</style>
+    <div id="storePage" class="hidden flex-col min-h-screen bg-[#f7f4f0]">
+        
         <!-- ÜST NAVİGASYON -->
         <header class="glass-panel sticky top-0 z-40 border-b border-[#b8956e]/20">
-            <div class="max-w-7xl mx-auto px-6 sm:px-12 h-24 flex items-center justify-between">
-                <div class="flex items-center space-x-4 cursor-pointer group" onclick="backToHome()">
-                    <div class="w-12 h-12 rounded-full border border-[#b8956e]/40 flex items-center justify-center bg-white overflow-hidden shadow-md transition group-hover:scale-105">
+            <div class="max-w-7xl mx-auto px-4 sm:px-12 h-20 sm:h-24 flex items-center justify-between">
+                <div class="flex items-center space-x-3 cursor-pointer group" onclick="backToHome()">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-[#b8956e]/40 flex items-center justify-center bg-white overflow-hidden shadow-md transition group-hover:scale-105">
                         <img src="kapak.png" alt="Logo" class="w-full h-full object-contain" onerror="this.src='https://via.placeholder.com/48?text=D'">
                     </div>
                     <div>
-                        <h2 class="font-cinzel text-xl tracking-[0.25em] font-bold text-[#2c2522]">BUTİK DOQU</h2>
-                        <p class="text-[9px] tracking-[0.3em] text-[#8c6d4f] uppercase font-semibold">Haute Couture Vitrin</p>
+                        <h2 class="font-cinzel text-sm sm:text-xl tracking-[0.2em] sm:tracking-[0.25em] font-bold text-[#2c2522]">BUTİK DOQU</h2>
+                        <p class="text-[8px] sm:text-[9px] tracking-[0.2em] sm:tracking-[0.3em] text-[#8c6d4f] uppercase font-semibold">Haute Couture Vitrin</p>
                     </div>
                 </div>
 
                 <div class="flex items-center space-x-4">
-                    <button onclick="backToHome()" class="glass-panel hover:bg-[#eedecc]/50 text-[#2c2522] transition flex items-center space-x-2 px-6 py-3 rounded-full text-xs font-cinzel tracking-widest border border-[#b8956e]/30 font-medium">
+                    <button onclick="backToHome()" class="glass-panel hover:bg-[#eedecc]/50 text-[#2c2522] transition flex items-center space-x-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full text-[11px] sm:text-xs font-cinzel tracking-widest border border-[#b8956e]/30 font-medium">
                         <span>← Ana Sayfa</span>
                     </button>
                 </div>
@@ -150,24 +130,21 @@ img {
         </header>
 
         <!-- İÇERİK ALANI -->
-        <main class="max-w-7xl mx-auto px-6 sm:px-12 py-12 flex-1 w-full">
-            <div class="flex flex-col lg:flex-row gap-12">
+        <main class="max-w-7xl mx-auto px-4 sm:px-12 py-8 sm:py-12 flex-1 w-full">
+            <div class="flex flex-col lg:flex-row gap-8 lg:gap-12">
                 
                 <!-- SOL FİLTRE / BİLGİ PANELİ -->
-                <aside class="w-full lg:w-72 glass-panel p-8 rounded-3xl h-fit space-y-8 sticky top-32">
+                <aside class="w-full lg:w-72 glass-panel p-6 sm:p-8 rounded-3xl h-fit space-y-6 sm:space-y-8 lg:sticky lg:top-32">
                     <div>
-                        <h3 class="font-cinzel text-sm uppercase tracking-[0.2em] font-bold text-[#2c2522] mb-6 pb-4 border-b border-[#b8956e]/20">Filtrele & Beden</h3>
-                        <div class="space-y-4 text-xs text-[#5c4d45] font-medium">
-                            <label class="flex items-center space-x-3 cursor-pointer group">
-                                <span class="group-hover:text-[#2c2522] transition">Standart Beden (One Size)</span>
-                                <span class="group-hover:text-[#2c2522] transition">M Beden</span>
-                                <span class="group-hover:text-[#2c2522] transition">L Beden</span>
-                                
-                            </label>
+                        <h3 class="font-cinzel text-sm uppercase tracking-[0.2em] font-bold text-[#2c2522] mb-4 pb-3 border-b border-[#b8956e]/20">Filtrele & Beden</h3>
+                        <div class="flex flex-wrap lg:flex-col gap-3 text-xs text-[#5c4d45] font-medium">
+                            <span class="bg-white/60 px-3 py-1.5 rounded-lg border border-[#b8956e]/20">Standart Beden (One Size)</span>
+                            <span class="bg-white/60 px-3 py-1.5 rounded-lg border border-[#b8956e]/20">M Beden</span>
+                            <span class="bg-white/60 px-3 py-1.5 rounded-lg border border-[#b8956e]/20">L Beden</span>
                         </div>
                     </div>
 
-                    <div class="bg-[#eedecc]/40 p-6 rounded-2xl border border-[#b8956e]/30 text-xs text-[#5c4d45] space-y-3">
+                    <div class="bg-[#eedecc]/40 p-5 sm:p-6 rounded-2xl border border-[#b8956e]/30 text-xs text-[#5c4d45] space-y-3">
                         <p class="font-cinzel font-bold text-[#3d322c] tracking-wider">✦ BUTİK BİLGİSİ</p>
                         <p class="font-light leading-relaxed">Tüm siparişleriniz özel kokulu ve özenli paketler halinde en geç <strong class="text-[#2c2522] font-semibold">3 günde</strong> kargoya verilir.</p>
                         <div class="pt-3 border-t border-[#b8956e]/20 text-center font-cinzel text-[10px] tracking-widest text-[#8c6d4f] uppercase font-semibold">
@@ -176,22 +153,19 @@ img {
                     </div>
                 </aside>
 
-                <!-- SAĞ 15 ÜRÜNLÜK LÜKS VİTRİN -->
+                <!-- SAĞ ÜRÜN VİTRİNİ -->
                 <div class="flex-1">
-                    <div class="flex justify-between items-center mb-8 pb-4 border-b border-[#b8956e]/20">
-                        <p class="text-xs text-[#6c5a50] tracking-widest font-medium"><span class="font-bold text-[#2c2522]">15</span> Özel Parça Listeleniyor</p>
+                    <div class="flex justify-between items-center mb-6 sm:mb-8 pb-4 border-b border-[#b8956e]/20">
+                        <p class="text-xs text-[#6c5a50] tracking-widest font-medium"><span class="font-bold text-[#2c2522]">12</span> Özel Parça Listeleniyor</p>
                         <span class="text-xs text-[#8c6d4f] font-cinzel tracking-widest uppercase font-semibold">2026 Koleksiyonu</span>
                     </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                         
                         <!-- ÜRÜN 1 -->
                         <div class="glass-panel rounded-3xl overflow-hidden group hover:border-[#d4af37] transition duration-700 flex flex-col">
                             <div class="relative bg-[#eee6dd] aspect-[3/4] overflow-hidden">
-                                <img src="1.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                                <div class="absolute inset-0 bg-[#2c2522]/10 opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6">
-                                    <button class="w-full bg-[#2c2522] text-[#f7f4f0] py-3 rounded-xl text-xs font-cinzel uppercase tracking-widest font-bold hover:bg-[#d4af37] hover:text-white transition shadow-xl">Parçayı İncele</button>
-                                </div>
+                                <img src="1.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" onerror="this.src='https://via.placeholder.com/300x400?text=ButikDoqu'">
                             </div>
                             <div class="p-6 flex flex-col flex-1 justify-between">
                                 <div>
@@ -200,7 +174,7 @@ img {
                                 </div>
                                 <div class="mt-6 pt-4 border-t border-[#b8956e]/20 flex items-center justify-between text-[11px] text-[#6c5a50] tracking-wider">
                                     <span>Standart Beden</span>
-                                    <span class="text-[#8c6d4f] font-cinzel font-semibold"><a href="https://www.trendyol.com/pd/genel-markalar/kadin-nakisli-trenckot-p-1205585764?boutiqueId=61&merchantId=1340973&filterOverPriceListings=false&sav=true">Satın Al</a></span>
+                                    <span class="text-[#8c6d4f] font-cinzel font-semibold"><a href="https://www.trendyol.com/pd/genel-markalar/kadin-nakisli-trenckot-p-1205585764?boutiqueId=61&merchantId=1340973" target="_blank">Satın Al</a></span>
                                 </div>
                             </div>
                         </div>
@@ -208,10 +182,7 @@ img {
                         <!-- ÜRÜN 2 -->
                         <div class="glass-panel rounded-3xl overflow-hidden group hover:border-[#d4af37] transition duration-700 flex flex-col">
                             <div class="relative bg-[#eee6dd] aspect-[3/4] overflow-hidden">
-                                <img src="2.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                                <div class="absolute inset-0 bg-[#2c2522]/10 opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6">
-                                    <button class="w-full bg-[#2c2522] text-[#f7f4f0] py-3 rounded-xl text-xs font-cinzel uppercase tracking-widest font-bold hover:bg-[#d4af37] hover:text-white transition shadow-xl">Parçayı İncele</button>
-                                </div>
+                                <img src="2.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" onerror="this.src='https://via.placeholder.com/300x400?text=ButikDoqu'">
                             </div>
                             <div class="p-6 flex flex-col flex-1 justify-between">
                                 <div>
@@ -220,7 +191,7 @@ img {
                                 </div>
                                 <div class="mt-6 pt-4 border-t border-[#b8956e]/20 flex items-center justify-between text-[11px] text-[#6c5a50] tracking-wider">
                                     <span>M/L/XL</span>
-                                    <span class="text-[#8c6d4f] font-cinzel font-semibold"><a href="https://www.trendyol.com/pd/genel-markalar/triko-beli-bagcikli-fermuarli-ikili-takim-p-1205590392?boutiqueId=61&merchantId=1340973&filterOverPriceListings=false&sav=true">Satın Al</a></span>
+                                    <span class="text-[#8c6d4f] font-cinzel font-semibold"><a href="https://www.trendyol.com/pd/genel-markalar/triko-beli-bagcikli-fermuarli-ikili-takim-p-1205590392?boutiqueId=61&merchantId=1340973" target="_blank">Satın Al</a></span>
                                 </div>
                             </div>
                         </div>
@@ -228,10 +199,7 @@ img {
                         <!-- ÜRÜN 3 -->
                         <div class="glass-panel rounded-3xl overflow-hidden group hover:border-[#d4af37] transition duration-700 flex flex-col">
                             <div class="relative bg-[#eee6dd] aspect-[3/4] overflow-hidden">
-                                <img src="3.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                                <div class="absolute inset-0 bg-[#2c2522]/10 opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6">
-                                    <button class="w-full bg-[#2c2522] text-[#f7f4f0] py-3 rounded-xl text-xs font-cinzel uppercase tracking-widest font-bold hover:bg-[#d4af37] hover:text-white transition shadow-xl">Parçayı İncele</button>
-                                </div>
+                                <img src="3.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" onerror="this.src='https://via.placeholder.com/300x400?text=ButikDoqu'">
                             </div>
                             <div class="p-6 flex flex-col flex-1 justify-between">
                                 <div>
@@ -240,7 +208,7 @@ img {
                                 </div>
                                 <div class="mt-6 pt-4 border-t border-[#b8956e]/20 flex items-center justify-between text-[11px] text-[#6c5a50] tracking-wider">
                                     <span>S/M/L</span>
-                                    <span class="text-[#8c6d4f] font-cinzel font-semibold"><a href="https://www.trendyol.com/pd/genel-markalar/dugmeli-kisa-blazer-triko-ceket-p-1203452817?boutiqueId=61&merchantId=1340973&filterOverPriceListings=false&sav=true">Satın Al</a></span>
+                                    <span class="text-[#8c6d4f] font-cinzel font-semibold"><a href="https://www.trendyol.com/pd/genel-markalar/dugmeli-kisa-blazer-triko-ceket-p-1203452817?boutiqueId=61&merchantId=1340973" target="_blank">Satın Al</a></span>
                                 </div>
                             </div>
                         </div>
@@ -248,10 +216,7 @@ img {
                         <!-- ÜRÜN 4 -->
                         <div class="glass-panel rounded-3xl overflow-hidden group hover:border-[#d4af37] transition duration-700 flex flex-col">
                             <div class="relative bg-[#eee6dd] aspect-[3/4] overflow-hidden">
-                                <img src="4.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                                <div class="absolute inset-0 bg-[#2c2522]/10 opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6">
-                                    <button class="w-full bg-[#2c2522] text-[#f7f4f0] py-3 rounded-xl text-xs font-cinzel uppercase tracking-widest font-bold hover:bg-[#d4af37] hover:text-white transition shadow-xl">Parçayı İncele</button>
-                                </div>
+                                <img src="4.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" onerror="this.src='https://via.placeholder.com/300x400?text=ButikDoqu'">
                             </div>
                             <div class="p-6 flex flex-col flex-1 justify-between">
                                 <div>
@@ -260,7 +225,7 @@ img {
                                 </div>
                                 <div class="mt-6 pt-4 border-t border-[#b8956e]/20 flex items-center justify-between text-[11px] text-[#6c5a50] tracking-wider">
                                     <span>S/M/L</span>
-                                    <span class="text-[#8c6d4f] font-cinzel font-semibold"><a href="https://www.trendyol.com/genel-markalar/kadin-blazer-triko-ceket-p-1204751274?boutiqueId=61&merchantId=1340973&filterOverPriceListings=false&sav=true">Satın Al</a></span>
+                                    <span class="text-[#8c6d4f] font-cinzel font-semibold"><a href="https://www.trendyol.com/genel-markalar/kadin-blazer-triko-ceket-p-1204751274?boutiqueId=61&merchantId=1340973" target="_blank">Satın Al</a></span>
                                 </div>
                             </div>
                         </div>
@@ -268,10 +233,7 @@ img {
                         <!-- ÜRÜN 5 -->
                         <div class="glass-panel rounded-3xl overflow-hidden group hover:border-[#d4af37] transition duration-700 flex flex-col">
                             <div class="relative bg-[#eee6dd] aspect-[3/4] overflow-hidden">
-                                <img src="5.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                                <div class="absolute inset-0 bg-[#2c2522]/10 opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6">
-                                    <button class="w-full bg-[#2c2522] text-[#f7f4f0] py-3 rounded-xl text-xs font-cinzel uppercase tracking-widest font-bold hover:bg-[#d4af37] hover:text-white transition shadow-xl">Parçayı İncele</button>
-                                </div>
+                                <img src="5.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" onerror="this.src='https://via.placeholder.com/300x400?text=ButikDoqu'">
                             </div>
                             <div class="p-6 flex flex-col flex-1 justify-between">
                                 <div>
@@ -280,7 +242,7 @@ img {
                                 </div>
                                 <div class="mt-6 pt-4 border-t border-[#b8956e]/20 flex items-center justify-between text-[11px] text-[#6c5a50] tracking-wider">
                                     <span>Standart Beden</span>
-                                    <span class="text-[#8c6d4f] font-cinzel font-semibold"><a href="https://www.trendyol.com/genel-markalar/inci-dugmeli-kolsuz-yelek-p-1204794004?boutiqueId=61&merchantId=1340973&filterOverPriceListings=false&sav=true">Satın Al</a></span>
+                                    <span class="text-[#8c6d4f] font-cinzel font-semibold"><a href="https://www.trendyol.com/genel-markalar/inci-dugmeli-kolsuz-yelek-p-1204794004?boutiqueId=61&merchantId=1340973" target="_blank">Satın Al</a></span>
                                 </div>
                             </div>
                         </div>
@@ -288,19 +250,16 @@ img {
                         <!-- ÜRÜN 6 -->
                         <div class="glass-panel rounded-3xl overflow-hidden group hover:border-[#d4af37] transition duration-700 flex flex-col">
                             <div class="relative bg-[#eee6dd] aspect-[3/4] overflow-hidden">
-                                <img src="6.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                                <div class="absolute inset-0 bg-[#2c2522]/10 opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6">
-                                    <button class="w-full bg-[#2c2522] text-[#f7f4f0] py-3 rounded-xl text-xs font-cinzel uppercase tracking-widest font-bold hover:bg-[#d4af37] hover:text-white transition shadow-xl">Parçayı İncele</button>
-                                </div>
+                                <img src="6.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" onerror="this.src='https://via.placeholder.com/300x400?text=ButikDoqu'">
                             </div>
                             <div class="p-6 flex flex-col flex-1 justify-between">
                                 <div>
-                                    <h3 class="font-cinzel text-sm font-semibold tracking-wider text-[#2c2522] group-hover:text-[#8c6d4f] transition">İnci Düğmeli Dantelli Kadın Bluz</h3>
+                                    <h3 class="font-cinzel text-sm font-semibold tracking-wider text-[#2c2522] group-hover:text-[#8c6d4f] transition">İnci Düğmeli Dantelli Bluz</h3>
                                     <p class="text-[11px] text-[#6c5a50] mt-1 font-light tracking-wide">Özel Koleksiyon</p>
                                 </div>
                                 <div class="mt-6 pt-4 border-t border-[#b8956e]/20 flex items-center justify-between text-[11px] text-[#6c5a50] tracking-wider">
                                     <span>Standart Beden</span>
-                                    <span class="text-[#8c6d4f] font-cinzel font-semibold"><a href="https://www.trendyol.com/pd/genel-markalar/inci-dugmeli-dantel-detayli-kadin-bluz-p-1205592309?boutiqueId=61&merchantId=1340973&filterOverPriceListings=false&sav=true">Satın Al</a></span>
+                                    <span class="text-[#8c6d4f] font-cinzel font-semibold"><a href="https://www.trendyol.com/pd/genel-markalar/inci-dugmeli-dantel-detayli-kadin-bluz-p-1205592309?boutiqueId=61&merchantId=1340973" target="_blank">Satın Al</a></span>
                                 </div>
                             </div>
                         </div>
@@ -308,10 +267,7 @@ img {
                         <!-- ÜRÜN 7 -->
                         <div class="glass-panel rounded-3xl overflow-hidden group hover:border-[#d4af37] transition duration-700 flex flex-col">
                             <div class="relative bg-[#eee6dd] aspect-[3/4] overflow-hidden">
-                                <img src="7.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                                <div class="absolute inset-0 bg-[#2c2522]/10 opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6">
-                                    <button class="w-full bg-[#2c2522] text-[#f7f4f0] py-3 rounded-xl text-xs font-cinzel uppercase tracking-widest font-bold hover:bg-[#d4af37] hover:text-white transition shadow-xl">Parçayı İncele</button>
-                                </div>
+                                <img src="7.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" onerror="this.src='https://via.placeholder.com/300x400?text=ButikDoqu'">
                             </div>
                             <div class="p-6 flex flex-col flex-1 justify-between">
                                 <div>
@@ -320,7 +276,7 @@ img {
                                 </div>
                                 <div class="mt-6 pt-4 border-t border-[#b8956e]/20 flex items-center justify-between text-[11px] text-[#6c5a50] tracking-wider">
                                     <span>Standart Beden</span>
-                                    <span class="text-[#8c6d4f] font-cinzel font-semibold"><a href="https://www.trendyol.com/pd/genel-markalar/kapusonlu-dugmeli-ceket-p-1203488951?boutiqueId=61&merchantId=1340973&filterOverPriceListings=false&sav=true">Satın Al</a></span>
+                                    <span class="text-[#8c6d4f] font-cinzel font-semibold"><a href="https://www.trendyol.com/pd/genel-markalar/kapusonlu-dugmeli-ceket-p-1203488951?boutiqueId=61&merchantId=1340973" target="_blank">Satın Al</a></span>
                                 </div>
                             </div>
                         </div>
@@ -328,10 +284,7 @@ img {
                         <!-- ÜRÜN 8 -->
                         <div class="glass-panel rounded-3xl overflow-hidden group hover:border-[#d4af37] transition duration-700 flex flex-col">
                             <div class="relative bg-[#eee6dd] aspect-[3/4] overflow-hidden">
-                                <img src="8.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                                <div class="absolute inset-0 bg-[#2c2522]/10 opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6">
-                                    <button class="w-full bg-[#2c2522] text-[#f7f4f0] py-3 rounded-xl text-xs font-cinzel uppercase tracking-widest font-bold hover:bg-[#d4af37] hover:text-white transition shadow-xl">Parçayı İncele</button>
-                                </div>
+                                <img src="8.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" onerror="this.src='https://via.placeholder.com/300x400?text=ButikDoqu'">
                             </div>
                             <div class="p-6 flex flex-col flex-1 justify-between">
                                 <div>
@@ -340,7 +293,7 @@ img {
                                 </div>
                                 <div class="mt-6 pt-4 border-t border-[#b8956e]/20 flex items-center justify-between text-[11px] text-[#6c5a50] tracking-wider">
                                     <span>Standart Beden</span>
-                                    <span class="text-[#8c6d4f] font-cinzel font-semibold"><a href="https://www.trendyol.com/pd/genel-markalar/inci-dugmeli-kolsuz-yelek-p-1204734573?boutiqueId=61&merchantId=1340973&filterOverPriceListings=false&sav=true">Satın Al</a></span>
+                                    <span class="text-[#8c6d4f] font-cinzel font-semibold"><a href="https://www.trendyol.com/pd/genel-markalar/inci-dugmeli-kolsuz-yelek-p-1204734573?boutiqueId=61&merchantId=1340973" target="_blank">Satın Al</a></span>
                                 </div>
                             </div>
                         </div>
@@ -348,10 +301,7 @@ img {
                         <!-- ÜRÜN 9 -->
                         <div class="glass-panel rounded-3xl overflow-hidden group hover:border-[#d4af37] transition duration-700 flex flex-col">
                             <div class="relative bg-[#eee6dd] aspect-[3/4] overflow-hidden">
-                                <img src="9.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                                <div class="absolute inset-0 bg-[#2c2522]/10 opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6">
-                                    <button class="w-full bg-[#2c2522] text-[#f7f4f0] py-3 rounded-xl text-xs font-cinzel uppercase tracking-widest font-bold hover:bg-[#d4af37] hover:text-white transition shadow-xl">Parçayı İncele</button>
-                                </div>
+                                <img src="9.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" onerror="this.src='https://via.placeholder.com/300x400?text=ButikDoqu'">
                             </div>
                             <div class="p-6 flex flex-col flex-1 justify-between">
                                 <div>
@@ -360,7 +310,7 @@ img {
                                 </div>
                                 <div class="mt-6 pt-4 border-t border-[#b8956e]/20 flex items-center justify-between text-[11px] text-[#6c5a50] tracking-wider">
                                     <span>Standart Beden</span>
-                                    <span class="text-[#8c6d4f] font-cinzel font-semibold"><a href="https://www.trendyol.com/pd/genel-markalar/inci-dugmeli-alti-dantelli-kolsuz-yelek-p-1206116011?boutiqueId=61&merchantId=1340973&filterOverPriceListings=false&sav=true">Satın Al</a></span>
+                                    <span class="text-[#8c6d4f] font-cinzel font-semibold"><a href="https://www.trendyol.com/pd/genel-markalar/inci-dugmeli-alti-dantelli-kolsuz-yelek-p-1206116011?boutiqueId=61&merchantId=1340973" target="_blank">Satın Al</a></span>
                                 </div>
                             </div>
                         </div>
@@ -368,10 +318,7 @@ img {
                         <!-- ÜRÜN 10 -->
                         <div class="glass-panel rounded-3xl overflow-hidden group hover:border-[#d4af37] transition duration-700 flex flex-col">
                             <div class="relative bg-[#eee6dd] aspect-[3/4] overflow-hidden">
-                                <img src="10.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                                <div class="absolute inset-0 bg-[#2c2522]/10 opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6">
-                                    <button class="w-full bg-[#2c2522] text-[#f7f4f0] py-3 rounded-xl text-xs font-cinzel uppercase tracking-widest font-bold hover:bg-[#d4af37] hover:text-white transition shadow-xl">Parçayı İncele</button>
-                                </div>
+                                <img src="10.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" onerror="this.src='https://via.placeholder.com/300x400?text=ButikDoqu'">
                             </div>
                             <div class="p-6 flex flex-col flex-1 justify-between">
                                 <div>
@@ -380,7 +327,7 @@ img {
                                 </div>
                                 <div class="mt-6 pt-4 border-t border-[#b8956e]/20 flex items-center justify-between text-[11px] text-[#6c5a50] tracking-wider">
                                     <span>Standart Beden</span>
-                                    <span class="text-[#8c6d4f] font-cinzel font-semibold"><a href="https://www.trendyol.com/pd/genel-markalar/fermuarli-bagcikli-sakalli-ceket-p-1203523827?boutiqueId=61&merchantId=1340973&filterOverPriceListings=false&sav=true">Satın Al</a></span>
+                                    <span class="text-[#8c6d4f] font-cinzel font-semibold"><a href="https://www.trendyol.com/pd/genel-markalar/fermuarli-bagcikli-sakalli-ceket-p-1203523827?boutiqueId=61&merchantId=1340973" target="_blank">Satın Al</a></span>
                                 </div>
                             </div>
                         </div>
@@ -388,10 +335,7 @@ img {
                         <!-- ÜRÜN 11 -->
                         <div class="glass-panel rounded-3xl overflow-hidden group hover:border-[#d4af37] transition duration-700 flex flex-col">
                             <div class="relative bg-[#eee6dd] aspect-[3/4] overflow-hidden">
-                                <img src="11.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                                <div class="absolute inset-0 bg-[#2c2522]/10 opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6">
-                                    <button class="w-full bg-[#2c2522] text-[#f7f4f0] py-3 rounded-xl text-xs font-cinzel uppercase tracking-widest font-bold hover:bg-[#d4af37] hover:text-white transition shadow-xl">Parçayı İncele</button>
-                                </div>
+                                <img src="11.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" onerror="this.src='https://via.placeholder.com/300x400?text=ButikDoqu'">
                             </div>
                             <div class="p-6 flex flex-col flex-1 justify-between">
                                 <div>
@@ -400,7 +344,7 @@ img {
                                 </div>
                                 <div class="mt-6 pt-4 border-t border-[#b8956e]/20 flex items-center justify-between text-[11px] text-[#6c5a50] tracking-wider">
                                     <span>Standart Beden</span>
-                                    <span class="text-[#8c6d4f] font-cinzel font-semibold"><a href="https://www.trendyol.com/pd/genel-markalar/inci-dugmeli-kolsuz-yelek-p-1204733183?boutiqueId=61&merchantId=1340973&filterOverPriceListings=false&sav=true">Satın Al</a></span>
+                                    <span class="text-[#8c6d4f] font-cinzel font-semibold"><a href="https://www.trendyol.com/pd/genel-markalar/inci-dugmeli-kolsuz-yelek-p-1204733183?boutiqueId=61&merchantId=1340973" target="_blank">Satın Al</a></span>
                                 </div>
                             </div>
                         </div>
@@ -408,10 +352,7 @@ img {
                         <!-- ÜRÜN 12 -->
                         <div class="glass-panel rounded-3xl overflow-hidden group hover:border-[#d4af37] transition duration-700 flex flex-col">
                             <div class="relative bg-[#eee6dd] aspect-[3/4] overflow-hidden">
-                                <img src="12.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                                <div class="absolute inset-0 bg-[#2c2522]/10 opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6">
-                                    <button class="w-full bg-[#2c2522] text-[#f7f4f0] py-3 rounded-xl text-xs font-cinzel uppercase tracking-widest font-bold hover:bg-[#d4af37] hover:text-white transition shadow-xl">Parçayı İncele</button>
-                                </div>
+                                <img src="12.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" onerror="this.src='https://via.placeholder.com/300x400?text=ButikDoqu'">
                             </div>
                             <div class="p-6 flex flex-col flex-1 justify-between">
                                 <div>
@@ -420,52 +361,39 @@ img {
                                 </div>
                                 <div class="mt-6 pt-4 border-t border-[#b8956e]/20 flex items-center justify-between text-[11px] text-[#6c5a50] tracking-wider">
                                     <span>Standart Beden</span>
-                                    <span class="text-[#8c6d4f] font-cinzel font-semibold"><a href="https://www.trendyol.com/pd/genel-markalar/3-dugmeli-bluz-p-1205593366?boutiqueId=61&merchantId=1340973&filterOverPriceListings=false&sav=true">Satın Al</a></span>
+                                    <span class="text-[#8c6d4f] font-cinzel font-semibold"><a href="https://www.trendyol.com/pd/genel-markalar/3-dugmeli-bluz-p-1205593366?boutiqueId=61&merchantId=1340973" target="_blank">Satın Al</a></span>
                                 </div>
-                            </div>
-                        </div>
-<!-- İletişim / Destek Kutusu -->
-<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-12">
-    <div class="bg-white rounded-3xl p-8 sm:p-10 border border-doqu-200 shadow-sm flex flex-col md:flex-row items-center justify-between gap-8">
-        
-        <!-- Sol taraf: Bilgi metni -->
-        <div class="space-y-2 text-center md:text-left">
-            <span class="text-xs uppercase tracking-widest text-doqu-500 font-bold">Hakkımızda-</span>
-            <h3 class="font-serif text-2xl text-doqu-900 font-bold"></h3>
-            <p class="text-xs text-doqu-600 max-w-md">
-               
-            </p>
-        </div>
-
-        <!-- Sağ taraf: İletişim butonları / bilgileri -->
-        <div class="flex flex-col sm:flex-row items-center gap-4 w-full md:w-auto">
-          
-                <i class="fa-solid fa-phone text-doqu-500"></i>
-                <span>Tel 0212 699 67 05</span>
-                <span>E-posta epostaadres</span>
-               <button " class="glass-panel hover:bg-[#eedecc]/50 text-[#2c2522] transition flex items-center space-x-2 px-6 py-3 rounded-full text-xs font-cinzel tracking-widest border border-[#b8956e]/30 font-medium">
-                        <span><a href="https://www.trendyol.com/magaza/butikdoqu-m-1340973?sst=0&sk=1">Trendyol Profilimiz</a></span>
-                    </button>
-            </a>
-          
-            </a>
-        </div>
-
-    </div>
-</section>
-                            </div>
-                        </div>
-
                             </div>
                         </div>
 
                     </div>
+
+                    <!-- İletişim / Destek Kutusu -->
+                    <section class="mt-12">
+                        <div class="glass-panel rounded-3xl p-6 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+                            <div class="space-y-2">
+                                <span class="text-xs uppercase tracking-widest text-[#8c6d4f] font-bold">İletişim Bilgileri</span>
+                                <h3 class="font-cinzel text-xl text-[#2c2522] font-bold">Butik Doqu Destek Hattı</h3>
+                                <p class="text-xs text-[#6c5a50]">Sorularınız için bizimle her zaman iletişime geçebilirsiniz.</p>
+                            </div>
+                            <div class="flex flex-col sm:flex-row items-center gap-4 w-full md:w-auto">
+                                <div class="text-xs text-[#5c4d45] font-medium space-y-1">
+                                    <p>Tel: 0212 699 67 05</p>
+                                    <p>E-posta: destek@butikdoqu.com</p>
+                                </div>
+                                <a href="https://www.trendyol.com/magaza/butikdoqu-m-1340973?sst=0&sk=1" target="_blank" class="glass-panel hover:bg-[#eedecc]/50 text-[#2c2522] transition flex items-center justify-center px-6 py-3 rounded-full text-xs font-cinzel tracking-widest border border-[#b8956e]/30 font-medium w-full sm:w-auto">
+                                    <span>Trendyol Profilimiz</span>
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+
                 </div>
             </div>
         </main>
 
         <!-- LÜKS FOOTER -->
-        <footer class="border-t border-[#b8956e]/20 py-12 text-center text-xs tracking-[0.25em] text-[#6c5a50] uppercase font-medium">
+        <footer class="border-t border-[#b8956e]/20 py-8 text-center text-xs tracking-[0.25em] text-[#6c5a50] uppercase font-medium">
             © 2026 Butik Doqu. Tüm hakları saklıdır. ✨ 
         </footer>
     </div>
